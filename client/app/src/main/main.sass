@@ -1,0 +1,140 @@
+#main
+  .header
+    height: 50px
+    background-color: #FFF
+    border: 1px solid rgba(0,0,0,0.09)
+    position: fixed
+    top: 0px
+    left: 0px
+    width: 100%
+    z-index: 10
+
+    .logo
+      font-size: 30px
+      padding-left: 20px
+      line-height: 44px
+
+  .content
+    .left
+      padding: 0px
+      float: left
+      width: 400px
+
+      .sidenav
+        position: fixed
+        width: 400px
+        left: 0px
+        top: 50px
+        padding: 20px
+        background-color: #FFF
+        border-right: 1px solid #DDD
+        height: 100%
+        overflow-y: scroll
+
+        ul
+          list-style-type: none
+          margin-left: 0px
+          padding-left: 0px
+          font-size: 20px
+          color: #333
+
+          span.new
+            font-size: 14px
+            cursor: pointer
+
+            i
+              margin-right: 10px
+
+          li
+            padding-left: 0px
+            padding-top: 10px
+            padding-bottom: 10px
+
+            span
+              -webkit-transition: 0.3s ease-out all
+              transition: 0.3s ease-out all
+              cursor: pointer
+
+            span:hover
+              color: $COLOR_B
+
+            ul
+              padding-left: 20px
+
+            span
+              margin-right: 10px
+
+            i
+              margin-right: 10px
+              cursor: pointer
+              -webkit-transition: 0.3s ease-out all
+              transition: 0.3s ease-out all
+
+            i:hover
+              color: $COLOR_B
+
+        .navigation
+          div
+            height: 40px
+            font-size: 20px
+            color: #333
+            padding: 10px
+            line-height: 20px
+            cursor: pointer
+            -webkit-transition: 0.3s ease-out all
+            transition: 0.3s ease-out all
+
+          div:hover
+            color: $COLOR_B
+            background-color: #EEE
+
+          .course
+
+          .section
+            padding-left: 40px
+
+          .lesson
+            padding-left: 80px
+
+          .ending
+            padding-bottom: 100px
+
+
+    .right
+      top: 50px
+      position: relative
+      background-color: white
+      margin-left: 400px
+      margin-top: 60px
+
+      .banner
+        width: 100%
+
+      .markdown
+        max-width: 700px
+        margin: 0 auto
+        font-size: 18px
+        line-height: 28px
+
+        p
+          margin-bottom: 30px
+
+      .controls
+        text-align: right
+        margin-top: 60px
+        margin-bottom: 100px
+
+        .previous
+          float: left
+
+        .next, .previous
+          display: inline-block
+          cursor: pointer
+          -webkit-transition: 0.3s ease-out all
+          transition: 0.3s ease-out all
+
+        i
+          margin-right: 10px
+
+        .next:hover, .previous:hover
+          color: $COLOR_B

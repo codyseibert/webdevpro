@@ -1,0 +1,39 @@
+
+html
+  head
+    title WebDevPro
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.css")
+    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css")
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Abel|Karla|Monda|Roboto:100,300,400', type='text/css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,300|Shadows+Into+Light|Coming+Soon|Shadows+Into+Light+Two|Crafty+Girls|Alegreya+Sans+SC:400,300', type='text/css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,300|Shadows+Into+Light|Coming+Soon|Shadows+Into+Light+Two|Crafty+Girls|Alegreya+Sans+SC:400,300', type='text/css')
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
+    link(rel='stylesheet', href='app.css')
+    script(src='app.js')
+    script(src='templates.js')
+    
+    base(href="/")
+    
+  body(
+    ng-app='webdevpro'
+  )
+    div(ui-view="main")
+
+    //- .container-fluid
+    //-   .footer
+    //-     .row.copy
+    //-       .col-md-12.center © Seibert Software Solutions, LLC 2017
+    //-     .row
+    //-       .col-md-4
+    //-       .col-md-4
+    //-         ul
+    //-           li
+    //-             a(
+    //-               ui-sref="tos"
+    //-             ) Terms of Service
+    //-           li
+    //-             a(
+    //-               ui-sref="pp"
+    //-             ) Privacy Policy
+    //-       .col-md-4

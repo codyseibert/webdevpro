@@ -1,0 +1,17 @@
+{
+  "name": "client",
+  "description": "testing",
+  "main": "index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/codyseibert/webdevpro",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-material-design": "~4.0.1"
+  }
+}

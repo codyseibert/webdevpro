@@ -1,0 +1,32 @@
+#content
+  .markdown
+    button(
+      ng-click="obj.editingMarkdown = true"
+      ng-show="!obj.editingMarkdown"
+    ) Edit
+    button(
+      ng-click="obj.editingMarkdown = false; save()"
+      ng-show="obj.editingMarkdown"
+    ) Save
+    div(
+      marked="obj.markdown"
+      ng-show="!obj.editingMarkdown"
+    )
+    textarea(
+      ng-model="obj.markdown"
+      ng-show="obj.editingMarkdown"
+    )
+
+    //- .controls
+    //-   .previous(
+    //-     ng-show="pages[page].previous"
+    //-     ui-sref="main({page: pages[page].previous})"
+    //-   ) 
+    //-     i.fa.fa-arrow-left
+    //-     | {{pages[pages[page].previous].title}}
+    //-   
+    //-   .next(
+    //-     ui-sref="main({page: pages[page].next})"
+    //-   ) 
+    //-     i.fa.fa-arrow-right
+    //-     | {{pages[pages[page].next].title}}

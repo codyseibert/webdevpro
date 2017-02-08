@@ -1,0 +1,170 @@
+#main
+  .header
+    .logo WebDevPro
+
+  .content
+    .left
+      .sidenav
+        h1 Modules
+        
+        ul
+          li(
+            ng-repeat="module in modules"
+          ) 
+            span(
+              ng-show="!module.editTitle"
+              ui-sref="main.page({title: module.title})"
+            ) {{ module.title }}
+            input(
+              ng-model="module.title"
+              ng-show="module.editTitle"
+            )
+            i.fa.fa-save(
+              ng-click="module.editTitle = false; save()"
+              ng-show="module.editTitle"
+            )
+            i.fa.fa-pencil(
+              ng-click="module.editTitle = true"
+              ng-show="!module.editTitle"
+            )
+            i.fa.fa-trash(
+              ng-click="deleteModule(module)"
+            )
+            
+            ul
+              li(
+                ng-repeat="topic in module.topics"
+              ) 
+                span(
+                  ui-sref="main.page({title: topic.title})"
+                  ng-show="!topic.editTitle"
+                ) {{ topic.title }}
+                input(
+                  ng-model="topic.title"
+                  ng-show="topic.editTitle"
+                )
+                i.fa.fa-save(
+                  ng-click="topic.editTitle = false; save()"
+                  ng-show="topic.editTitle"
+                )
+                i.fa.fa-pencil(
+                  ng-click="topic.editTitle = true"
+                  ng-show="!topic.editTitle"
+                )
+                i.fa.fa-trash(
+                  ng-click="deleteTopic(module, topic)"
+                )
+                
+                ul(
+                  ng-show="module.topics"
+                )
+                  li(
+                    ng-repeat="lesson in topic.lessons"
+                  )
+                    span(
+                      ui-sref="main.page({title: lesson.title})"
+                      ng-show="!lesson.editTitle"
+                    ) {{ lesson.title }}
+                    input(
+                      ng-model="lesson.title"
+                      ng-show="lesson.editTitle"
+                    )
+                    i.fa.fa-save(
+                      ng-click="lesson.editTitle = false; save()"
+                      ng-show="lesson.editTitle"
+                    )
+                    i.fa.fa-pencil(
+                      ng-click="lesson.editTitle = true"
+                      ng-show="!lesson.editTitle"
+                    )
+                    i.fa.fa-trash(
+                      ng-click="deleteLesson(topic, lesson)"
+                    )
+                    
+                  li
+                    span.new(
+                      ng-click="newLesson(topic)"
+                    )
+                      i.fa.fa-plus
+                      | New Lesson
+              li
+                span.new(
+                  ng-click="newTopic(module)"
+                )
+                  i.fa.fa-plus
+                  | New Topic
+          li
+            span.new(
+              ng-click="newModule()"
+            )
+              i.fa.fa-plus
+              | New Module
+            
+        .navigation
+          .course(
+            ui-sref="main({page: 'intro'})"
+          ) Intro
+        
+          .course(
+            ui-sref="main({page: 'workspace'})"
+          ) Workspace
+          
+          .section IDE
+          .lesson Notepad++
+          .lesson Atom
+          .lesson Vim
+          
+          .section Terminal
+          .lesson Bash
+          .lesson Ssh
+          .lesson Scp
+          .lesson Grep
+          
+          .section Chrome
+          .lesson Network
+          .lesson Debugger
+          .lesson Console
+          
+          .section Git
+          .lesson Github
+          .lesson Add
+          .lesson Commit
+          .lesson Push
+          .lesson Branches
+          
+          .course Frontend 
+          .section HTML
+          .lesson XML
+          .lesson Elements
+          
+          .section CSS
+          .lesson Basics
+          .lesson Layout
+          .lesson Animations
+          
+          .section Javascript
+          .lesson Variables
+          .lesson Conditions
+          .lesson Arrays
+          .lesson Loops
+          .lesson Objects
+          
+          .course Backend
+          .lesson NodeJS
+          .lesson Express
+          
+          .course Database
+          .lesson MySQL
+          .lesson MongoDB
+          
+          .course CI / CD
+          .lesson Jenkins
+          .lesson Docker
+          .lesson CircleCI 
+          .lesson TravisCI
+          
+          .ending
+          
+    .right(
+      ui-view="content"
+    )
