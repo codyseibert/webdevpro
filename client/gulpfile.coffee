@@ -77,8 +77,8 @@ gulp.task 'scripts', ['replace'], ->
 gulp.task 'replace', ['coffee'], ->
   if isProduction
     gulp.src(['tmp/js/app.js'])
-      .pipe(replace('http://localhost:8081', 'http://notemanapi.seibertsoftwaresolutions.com'))
-      .pipe(replace('noteman-dev', 'noteman-prod'))
+      .pipe(replace('http://localhost:8081', 'http://webdevproapi.codyseibert.com'))
+      .pipe(replace('webdevpro-dev', 'webdevpro-prod'))
       .pipe(gulp.dest('tmp/js'))
 
 gulp.task 'connect', ->
