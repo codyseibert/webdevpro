@@ -2,7 +2,7 @@
   .markdown
     button(
       ng-click="obj.editingMarkdown = true"
-      ng-show="!obj.editingMarkdown"
+      ng-show="!obj.editingMarkdown && isAdmin"
     ) Edit
     button(
       ng-click="obj.editingMarkdown = false; save()"

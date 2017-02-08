@@ -31,10 +31,13 @@
         height: 100%
         overflow-y: scroll
 
+        .ending
+          padding-bottom: 100px
+
         ul
           list-style-type: none
           margin-left: 0px
-          padding-left: 0px
+          padding-left: 20px
           font-size: 20px
           color: #333
 
@@ -47,8 +50,12 @@
 
           li
             padding-left: 0px
-            padding-top: 10px
-            padding-bottom: 10px
+            padding-top: 16px
+
+            li
+              padding-bottom: 0px
+              padding-top: 16px
+
 
             span
               -webkit-transition: 0.3s ease-out all
@@ -72,33 +79,6 @@
 
             i:hover
               color: $COLOR_B
-
-        .navigation
-          div
-            height: 40px
-            font-size: 20px
-            color: #333
-            padding: 10px
-            line-height: 20px
-            cursor: pointer
-            -webkit-transition: 0.3s ease-out all
-            transition: 0.3s ease-out all
-
-          div:hover
-            color: $COLOR_B
-            background-color: #EEE
-
-          .course
-
-          .section
-            padding-left: 40px
-
-          .lesson
-            padding-left: 80px
-
-          .ending
-            padding-bottom: 100px
-
 
     .right
       top: 50px

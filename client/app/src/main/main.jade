@@ -26,8 +26,10 @@
             i.fa.fa-pencil(
               ng-click="module.editTitle = true"
               ng-show="!module.editTitle"
+              ng-if="isAdmin"
             )
             i.fa.fa-trash(
+              ng-if="isAdmin"
               ng-click="deleteModule(module)"
             )
             
@@ -50,8 +52,10 @@
                 i.fa.fa-pencil(
                   ng-click="topic.editTitle = true"
                   ng-show="!topic.editTitle"
+                  ng-if="isAdmin"
                 )
                 i.fa.fa-trash(
+                  ng-if="isAdmin"
                   ng-click="deleteTopic(module, topic)"
                 )
                 
@@ -76,95 +80,39 @@
                     i.fa.fa-pencil(
                       ng-click="lesson.editTitle = true"
                       ng-show="!lesson.editTitle"
+                      ng-if="isAdmin"
                     )
                     i.fa.fa-trash(
+                      ng-if="isAdmin"
                       ng-click="deleteLesson(topic, lesson)"
                     )
                     
-                  li
+                  li(
+                    ng-if="isAdmin"
+                  )
                     span.new(
                       ng-click="newLesson(topic)"
                     )
                       i.fa.fa-plus
                       | New Lesson
-              li
+              li(
+                ng-if="isAdmin"
+              )
                 span.new(
                   ng-click="newTopic(module)"
                 )
                   i.fa.fa-plus
                   | New Topic
-          li
+          li(
+            ng-if="isAdmin"
+          )
             span.new(
               ng-click="newModule()"
             )
               i.fa.fa-plus
               | New Module
             
-        .navigation
-          .course(
-            ui-sref="main({page: 'intro'})"
-          ) Intro
-        
-          .course(
-            ui-sref="main({page: 'workspace'})"
-          ) Workspace
-          
-          .section IDE
-          .lesson Notepad++
-          .lesson Atom
-          .lesson Vim
-          
-          .section Terminal
-          .lesson Bash
-          .lesson Ssh
-          .lesson Scp
-          .lesson Grep
-          
-          .section Chrome
-          .lesson Network
-          .lesson Debugger
-          .lesson Console
-          
-          .section Git
-          .lesson Github
-          .lesson Add
-          .lesson Commit
-          .lesson Push
-          .lesson Branches
-          
-          .course Frontend 
-          .section HTML
-          .lesson XML
-          .lesson Elements
-          
-          .section CSS
-          .lesson Basics
-          .lesson Layout
-          .lesson Animations
-          
-          .section Javascript
-          .lesson Variables
-          .lesson Conditions
-          .lesson Arrays
-          .lesson Loops
-          .lesson Objects
-          
-          .course Backend
-          .lesson NodeJS
-          .lesson Express
-          
-          .course Database
-          .lesson MySQL
-          .lesson MongoDB
-          
-          .course CI / CD
-          .lesson Jenkins
-          .lesson Docker
-          .lesson CircleCI 
-          .lesson TravisCI
-          
-          .ending
-          
+        .ending
     .right(
       ui-view="content"
     )

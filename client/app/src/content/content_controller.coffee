@@ -19,6 +19,8 @@ module.exports = [
 
     course = null
 
+    $scope.isAdmin = $location.search().password?
+
     findByTitle = (course, title) ->
       for module in course.modules
         if module.title is title
