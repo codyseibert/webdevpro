@@ -17,11 +17,14 @@ require 'angular-ui-calendar'
 require '@iamadamjowett/angular-click-outside'
 require 'angular-chart.js'
 require 'angular-jwt'
+# require 'angular-dragdrop'
+
 
 app = require('angular').module('webdevpro', [
   require 'angular-ui-router'
   require 'angular-resource'
   'ngAnimate'
+  # 'ngDragDrop'
   'angular-click-outside'
   'textAngular'
   'duScroll'
@@ -56,6 +59,7 @@ app.config ['$httpProvider', ($httpProvider) ->
 
 require './services'
 require './content'
+require './courses'
 require './main'
 require './tos'
 require './pp'

@@ -1,0 +1,13 @@
+#courses
+  .container
+    .row 
+      .col-md-12
+        h1 Courses
+        
+        .col-md-4(
+          ng-repeat="course in courses | filter : isActive"
+        )
+          .course(
+            ui-sref="courses.show({shortName: course.shortName})"
+          ) 
+            span {{course.title}}

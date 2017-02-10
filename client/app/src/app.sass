@@ -15,6 +15,26 @@ $COLOR_HERO_A: #6bc2ed
 $COLOR_HERO_B: #6bc2ed
 $COLOR_HERO_C: #278ebb
 
+.header
+  height: 60px
+  background-color: #FFF
+  border: 1px solid rgba(0,0,0,0.09)
+  background-color: rgb(214, 229, 216)
+  background-color: rgb(153, 207, 224)
+  color: white
+  position: fixed
+  top: 0px
+  left: 0px
+  width: 100%
+  z-index: 10
+  box-shadow: 3px 3px 7px #ccc
+
+  .logo
+    font-size: 30px
+    padding-left: 20px
+    line-height: 58px
+    cursor: pointer
+
 h1, h2, h3, h4, h5
   font-family: 'Abel', sans-serif
   font-family: 'Roboto', sans-serif
@@ -43,9 +63,13 @@ body
   font-family: 'Abel', sans-serif
   font-family: 'Roboto', sans-serif
   font-family: 'Open Sans', sans-serif
+  background-image: url('assets/images/lil_fiber.png')
+  background-repeat: repeat
 
 
 @import "./main/main"
+@import "./courses/courses"
+@import "./content/content"
 @import "./tos/tos"
 @import "./pp/pp"
 

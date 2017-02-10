@@ -21,6 +21,7 @@
     "angular-chart.js": "^0.8.9",
     "angular-confirm": "^1.2.3",
     "angular-deckgrid": "git+https://git@github.com/akoenig/angular-deckgrid.git",
+    "angular-dragdrop": "^1.0.13",
     "angular-filter": "^0.5.8",
     "angular-intro.js": "^2.0.3",
     "angular-inview": "^2.0.0",

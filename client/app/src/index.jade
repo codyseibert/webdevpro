@@ -2,6 +2,7 @@
 html
   head
     title WebDevPro
+    base(href="/")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/textAngular/1.5.0/textAngular.css")
     link(rel="stylesheet", href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css")
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
@@ -13,11 +14,14 @@ html
     script(src='app.js')
     script(src='templates.js')
     
-    base(href="/")
-    
   body(
     ng-app='webdevpro'
   )
+    .header
+      .logo(
+        ui-sref="courses"
+      ) WebDevPro
+
     div(ui-view="main")
 
     //- .container-fluid

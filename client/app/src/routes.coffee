@@ -14,17 +14,24 @@ module.exports = [
     $locationProvider.hashPrefix '!'
 
     $stateProvider
-      .state 'main',
-        url: '/'
+      .state 'courses',
+        url: '/courses'
         views:
           'main':
+            controller: 'CoursesCtrl'
+            templateUrl: 'courses/courses.html'
+
+      .state 'courses.show',
+        url: '/:shortName'
+        views:
+          'main@':
             controller: 'MainCtrl'
             templateUrl: 'main/main.html'
 
-      .state 'main.page',
-        url: ':title'
+      .state 'courses.show.page',
+        url: '/:title'
         views:
-          'content@main':
+          'content@courses.show':
             controller: 'ContentCtrl'
             templateUrl: 'content/content.html'
 

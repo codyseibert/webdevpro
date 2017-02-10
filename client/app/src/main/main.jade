@@ -1,11 +1,41 @@
 #main
-  .header
-    .logo WebDevPro
-
   .content
     .left
       .sidenav
-        h1 Modules
+        h2(
+          ng-show="!course.editTitle"
+        ) {{course.title}}
+        i.fa.fa-pencil(
+          ng-click="course.editTitle = true;"
+          ng-show="!course.editTitle"
+          ng-if="isAdmin"
+        )
+        input(
+          ng-model="course.title"
+          ng-show="course.editTitle"
+          placeholder="title"
+        )
+        input(
+          ng-model="course.shortName"
+          ng-show="course.editTitle"
+          placeholder="shortName"
+        )
+        i.fa.fa-save(
+          ng-click="course.editTitle = false; save()"
+          ng-show="course.editTitle"
+        )
+        
+        br
+        
+        label(
+          ng-if="isAdmin"
+        )
+          input(
+            type="checkbox"
+            ng-model="course.active"
+            ng-change="save()"
+          )
+          | Active
         
         ul
           li(
@@ -13,7 +43,7 @@
           ) 
             span(
               ng-show="!module.editTitle"
-              ui-sref="main.page({title: module.title})"
+              ui-sref="courses.show.page({shortName: shortName, title: module.title})"
             ) {{ module.title }}
             input(
               ng-model="module.title"
@@ -38,7 +68,7 @@
                 ng-repeat="topic in module.topics"
               ) 
                 span(
-                  ui-sref="main.page({title: topic.title})"
+                  ui-sref="courses.show.page({shortName: shortName, title: topic.title})"
                   ng-show="!topic.editTitle"
                 ) {{ topic.title }}
                 input(
@@ -66,7 +96,7 @@
                     ng-repeat="lesson in topic.lessons"
                   )
                     span(
-                      ui-sref="main.page({title: lesson.title})"
+                      ui-sref="courses.show.page({shortName: shortName, title: lesson.title})"
                       ng-show="!lesson.editTitle"
                     ) {{ lesson.title }}
                     input(

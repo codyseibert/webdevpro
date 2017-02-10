@@ -18,17 +18,20 @@ module.exports = [
 
     $scope.isAdmin = $location.search().password?
 
-    if $state.current.name is 'main'
-      $state.go 'main.page', {title: 'Intro'}
+    $scope.shortName = $stateParams.shortName
 
-    course = null
+    $scope.course = null
 
     CoursesService.then (courses) ->
-      course = courses[0]
-      $scope.modules = course.modules
+      $scope.course = _.find courses, (c) ->
+        c.shortName is $scope.shortName
+      $scope.modules = $scope.course.modules
+      $state.go 'courses.show.page',
+        shortName: $scope.shortName
+        title: $scope.modules[0].title
 
     $scope.save = ->
-      CourseService.put course
+      CourseService.put $scope.course
 
     $scope.deleteModule = (module) ->
       y = confirm 'are you sure you want to delete this module?'

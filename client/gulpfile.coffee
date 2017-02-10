@@ -87,7 +87,9 @@ gulp.task 'connect', ->
     livereload: true
     middleware: (connect, options) ->
       [
-        modRewrite ['!\\.html|\\.otf|\\.jpg|\\.js|\\.svg|\\.ico|\\.ttf|\\.woff|\\.css|\\.png$ /index.html [L]']
+        modRewrite [
+          '!\\.html|\\.otf|\\.jpg|\\.js|\\.svg|\\.ico|\\.ttf|\\.woff|\\.css|\\.png$ /index.html [L]'
+        ]
       ]
 
 gulp.task 'watch', ->

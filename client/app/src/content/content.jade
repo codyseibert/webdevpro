@@ -17,16 +17,17 @@
       ng-show="obj.editingMarkdown"
     )
 
-    //- .controls
-    //-   .previous(
-    //-     ng-show="pages[page].previous"
-    //-     ui-sref="main({page: pages[page].previous})"
-    //-   ) 
-    //-     i.fa.fa-arrow-left
-    //-     | {{pages[pages[page].previous].title}}
-    //-   
-    //-   .next(
-    //-     ui-sref="main({page: pages[page].next})"
-    //-   ) 
-    //-     i.fa.fa-arrow-right
-    //-     | {{pages[pages[page].next].title}}
+    .controls
+      .previous(
+        ng-show="obj.previous"
+        ui-sref="courses.show.page({shortName: shortName, title: obj.previous})"
+      ) 
+        i.fa.fa-arrow-left
+        | {{obj.previous}}
+      
+      .next(
+        ng-show="obj.next"
+        ui-sref="courses.show.page({shortName: shortName, title: obj.next})"
+      ) 
+        i.fa.fa-arrow-right
+        | {{obj.next}}
