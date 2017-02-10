@@ -8,7 +8,7 @@ module.exports = [
     $locationProvider
   ) ->
 
-    $urlRouterProvider.otherwise '/'
+    $urlRouterProvider.otherwise '/courses'
 
     $locationProvider.html5Mode enabled: true, requireBase: false
     $locationProvider.hashPrefix '!'
