@@ -4,12 +4,14 @@ module.exports = [
   '$q'
   'API_PATH'
   '$location'
+  'AdminService'
   (
     _
     $http
     $q
     API_PATH
     $location
+    AdminService
   ) ->
 
     index: (course) ->
@@ -27,7 +29,7 @@ module.exports = [
         method: 'PUT'
         url: "#{API_PATH}/courses/#{course._id}"
         headers:
-          password: $location.search().password
+          password: AdminService.password
         data: course
       ).then (response) ->
         response.data
@@ -37,7 +39,7 @@ module.exports = [
         method: 'PUT'
         url: "#{API_PATH}/courses"
         headers:
-          password: $location.search().password
+          password: AdminService.password
         data: course
       ).then (response) ->
         response.data

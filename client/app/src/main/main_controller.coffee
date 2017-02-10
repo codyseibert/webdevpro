@@ -6,6 +6,7 @@ module.exports = [
   'CoursesService'
   'CourseService'
   '$location'
+  'AdminService'
   (
     $scope
     $state
@@ -14,9 +15,10 @@ module.exports = [
     CoursesService
     CourseService
     $location
+    AdminService
   ) ->
 
-    $scope.isAdmin = $location.search().password?
+    $scope.isAdmin = AdminService.password?
 
     $scope.shortName = $stateParams.shortName
 

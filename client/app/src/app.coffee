@@ -69,17 +69,15 @@ app.constant 'API_PATH', 'http://localhost:8081'
 app.run [
   '$rootScope'
   '$location'
+  'AdminService'
   (
     $rootScope
     $location
+    AdminService
   ) ->
 
     locationSearch = null
 
-    $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
-      locationSearch = $location.search()
-
-    $rootScope.$on '$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) ->
-      $location.search locationSearch
+    AdminService.password = $location.search().password
 
 ]
