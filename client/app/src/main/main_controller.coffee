@@ -28,9 +28,10 @@ module.exports = [
       $scope.course = _.find courses, (c) ->
         c.shortName is $scope.shortName
       $scope.modules = $scope.course.modules
-      $state.go 'courses.show.page',
-        shortName: $scope.shortName
-        title: $scope.modules[0].title
+      if $state.current.name is 'courses.show'
+        $state.go 'courses.show.page',
+          shortName: $scope.shortName
+          title: $scope.modules[0].title
 
     $scope.save = ->
       CourseService.put $scope.course
