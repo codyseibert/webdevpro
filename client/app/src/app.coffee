@@ -1,6 +1,6 @@
 window.$ = require 'jquery'
 window.moment = require 'moment'
-window.hljs = require 'highlight.js'
+# window.hljs = require 'highlight.js'
 
 angular = require 'angular'
 require 'angular-scroll'
