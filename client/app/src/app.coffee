@@ -1,5 +1,7 @@
 window.$ = require 'jquery'
 window.moment = require 'moment'
+window.hljs = require 'highlight.js'
+
 angular = require 'angular'
 require 'angular-scroll'
 require 'angular-filter'
@@ -47,14 +49,22 @@ app.config require './routes'
 
 app.config [
   'localStorageServiceProvider'
+  'markedProvider'
   (
     localStorageServiceProvider
+    markedProvider
   ) ->
     localStorageServiceProvider
       .setPrefix 'webdevpro-dev'
-]
 
-app.config ['$httpProvider', ($httpProvider) ->
+    markedProvider.setOptions
+      gfm: true
+      tables: true
+      highlight: (code, lang) ->
+        if lang
+          hljs.highlight(lang, code, true).value
+        else
+          hljs.highlightAuto(code).value
 ]
 
 require './services'
@@ -79,5 +89,8 @@ app.run [
     locationSearch = null
 
     AdminService.password = $location.search().password
+
+    $rootScope.$on "$stateChangeSuccess", (event, currentRoute, previousRoute) ->
+      window.scrollTo 0, 0
 
 ]
