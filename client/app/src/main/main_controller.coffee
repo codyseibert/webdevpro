@@ -32,6 +32,33 @@ module.exports = [
         $state.go 'courses.show.page',
           shortName: $scope.shortName
           title: $scope.modules[0].title
+      else
+        refreshNav()
+
+    refreshNav = ->
+      path = $location.path()
+      split = path.split('/')
+      title = split[split.length - 1]
+
+      return if not $scope.modules?
+
+      for module in $scope.modules
+        module.clicked = false
+        if module.title is title
+          module.clicked = true
+        for topic in module.topics
+          topic.clicked = false
+          if topic.title is title
+            topic.clicked = true
+          for lesson in topic.lessons
+            lesson.clicked = false
+            if lesson.title is title
+              lesson.clicked = true
+
+    $scope.$watch ->
+      $location.path()
+    , (newValue, oldValue) ->
+      refreshNav()
 
     $scope.save = ->
       CourseService.put $scope.course

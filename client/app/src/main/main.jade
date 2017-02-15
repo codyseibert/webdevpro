@@ -43,6 +43,7 @@
           ) 
             span(
               ng-show="!module.editTitle"
+              ng-class="{clicked: module.clicked}"
               ui-sref="courses.show.page({shortName: shortName, title: module.title})"
             ) {{ module.title }}
             input(
@@ -68,6 +69,7 @@
                 ng-repeat="topic in module.topics"
               ) 
                 span(
+                  ng-class="{clicked: topic.clicked}"
                   ui-sref="courses.show.page({shortName: shortName, title: topic.title})"
                   ng-show="!topic.editTitle"
                 ) {{ topic.title }}
@@ -96,6 +98,7 @@
                     ng-repeat="lesson in topic.lessons"
                   )
                     span(
+                      ng-class="{clicked: lesson.clicked}"
                       ui-sref="courses.show.page({shortName: shortName, title: lesson.title})"
                       ng-show="!lesson.editTitle"
                     ) {{ lesson.title }}
