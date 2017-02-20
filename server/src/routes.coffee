@@ -8,10 +8,10 @@ module.exports = do ->
 
   # app.post '/login', LoginCtrl.post
 
-  app.get '/courses', CoursesCtrl.index
-  app.get '/courses/:id', CoursesCtrl.show
-  app.post '/courses', isAdmin, CoursesCtrl.post
-  app.put '/courses/:id', isAdmin, CoursesCtrl.put
+  app.get '/api/courses', CoursesCtrl.index
+  app.get '/api/courses/:id', CoursesCtrl.show
+  app.post '/api/courses', isAdmin, CoursesCtrl.post
+  app.put '/api/courses/:id', isAdmin, CoursesCtrl.put
 
   # app.post '/users', UsersCtrl.post
   # app.get '/users/:id', userIsLoggedIn, userOwnsUser, UsersCtrl.show

@@ -1,0 +1,177 @@
+html
+
+  head
+    title= title
+    meta(name="description" content= description || "a basic web development tutorial using HTML, JS, and CSS")
+    link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css")
+    link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/hybrid.min.css")
+    link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js")
+    script.
+      hljs.initHighlightingOnLoad();
+
+    style.
+      body {
+        font-family: 'Open Sans', sans-serif;
+        overflow-y: hidden;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      .header {
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        top: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        font-size: 20px;
+      }
+
+      .gradient {
+        background-color: #aadcf0;
+        /* IE9, iOS 3.2+ */
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIxMDAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjAlIj48c3RvcCBzdG9wLWNvbG9yPSIjYzVlM2VmIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNjNGUzZWYiIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==);
+        background-image: -webkit-gradient(linear, 100% 0%, 0% 0%,color-stop(0, rgb(197, 227, 239)),color-stop(1, rgb(196, 227, 239)));
+        /* Android 2.3 */
+        background-image: -webkit-repeating-linear-gradient(right,rgb(197, 227, 239) 0%,rgb(142, 212, 241) 101%);
+        /* IE10+ */
+        background-image: repeating-linear-gradient(to left,rgb(197, 227, 239) 0%,rgb(142, 212, 241) 101%);
+        background-image: -ms-repeating-linear-gradient(right,rgb(197, 227, 239) 0%,rgb(142, 212, 241) 101%);
+      }
+
+      /* IE8- CSS hack */
+      @media \0screen\,screen\9 {
+        .gradient {
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff8ed4f1",endColorstr="#ffc5e3ef",GradientType=1);
+        }
+      }
+
+      .header .logo {
+        float: left;
+        color: white;
+      }
+
+      .header .links {
+        text-align: right;
+      }
+
+      .header .links .link a {
+        color: white
+      }
+
+      img {
+        width: 100%;
+      }
+
+      a {
+        cursor: pointer;
+      }
+
+      .container-fluid {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 56px;
+      }
+
+      .navigation {
+        background-color: #303030;
+        height: 100%;
+        overflow-y: scroll;
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 70px;
+      }
+
+      .navigation h1 {
+        font-size: 24px;
+      }
+
+      .navigation a {
+        color: white;
+        font-size: 18px;
+      }
+
+      .navigation li {
+        line-height: 40px;
+      }
+
+      .content {
+        height: 100%;
+        overflow-y: scroll;
+        padding-bottom: 60px;
+      }
+
+      .markdown {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 18px;
+        line-height: 30px;
+      }
+
+      .markdown .controls {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+
+      .markdown .controls i{
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .markdown .controls .previous {
+        float: left;
+      }
+
+      .markdown .controls .next {
+        text-align: right;
+      }
+
+  body
+    .header.gradient
+      .logo WebDevPro
+      .links
+        .link
+          a(href="/courses") Courses
+
+    .container-fluid
+      .row
+        .col-md-3
+          .navigation
+            h1= course.title
+
+            ul
+              for module in course.modules
+                li
+                  a(href= module.link)= module.title
+                  ul
+                    for topic in module.topics
+                      li
+                        a(href= topic.link)= topic.title
+                        ul
+                          for lesson in topic.lessons
+                            li
+                              a(href= lesson.link)= lesson.title
+
+        .col-md-9
+          .content
+            .markdown!= page.markdown
+
+              .controls
+                - if (page.previous !== undefined)
+                  .previous
+                    a(href= page.previous.link)
+                      i.fa.fa-caret-left
+                      span= page.previous.title
+                - if (page.next !== undefined)
+                  .next
+                    a(href= page.next.link)
+                      span= page.next.title
+                      i.fa.fa-caret-right

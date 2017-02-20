@@ -77,7 +77,7 @@ gulp.task 'scripts', ['replace'], ->
 gulp.task 'replace', ['coffee'], ->
   if isProduction
     gulp.src(['tmp/js/app.js'])
-      .pipe(replace('http://localhost:8081', 'http://webdevproapi.codyseibert.com'))
+      .pipe(replace('http://localhost:8081/api', 'http://webdevpro.codyseibert.com/api'))
       .pipe(replace('webdevpro-dev', 'webdevpro-prod'))
       .pipe(gulp.dest('tmp/js'))
 

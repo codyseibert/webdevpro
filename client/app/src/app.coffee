@@ -76,7 +76,7 @@ require './main'
 require './tos'
 require './pp'
 
-app.constant 'API_PATH', 'http://localhost:8081'
+app.constant 'API_PATH', 'http://localhost:8081/api'
 
 app.run [
   '$rootScope'
