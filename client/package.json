@@ -47,6 +47,7 @@
     "guid": "0.0.12",
     "highlight.js": "^9.9.0",
     "jquery": "^2.2.4",
+    "jquery-ui": "^1.12.1",
     "js-base64": "^2.1.9",
     "jsonwebtoken": "^7.1.9",
     "lodash": "^3.10.0",

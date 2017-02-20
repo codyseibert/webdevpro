@@ -1,4 +1,6 @@
 window.$ = require 'jquery'
+window.jQuery = require 'jquery'
+require 'jquery-ui'
 window.moment = require 'moment'
 # window.hljs = require 'highlight.js'
 
@@ -19,7 +21,7 @@ require 'angular-ui-calendar'
 require '@iamadamjowett/angular-click-outside'
 require 'angular-chart.js'
 require 'angular-jwt'
-# require 'angular-dragdrop'
+require 'angular-dragdrop'
 
 
 app = require('angular').module('webdevpro', [
