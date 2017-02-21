@@ -109,6 +109,11 @@ html
         padding-bottom: 60px;
       }
 
+      .social {
+        text-align: right;
+        margin-top: 40px;
+      }
+
       .markdown {
         max-width: 700px;
         margin: 0 auto;
@@ -164,8 +169,16 @@ html
         .col-md-9
           .content
             .social
-              div(class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true")
-                
+              div(
+                class="fb-like"
+                data-href="https://developers.facebook.com/docs/plugins/"
+                data-layout="standard"
+                data-action="like"
+                data-size="small"
+                data-show-faces="true"
+                data-share="true"
+              )
+
             .markdown!= page.markdown
 
               .controls
