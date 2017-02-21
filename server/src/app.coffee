@@ -101,6 +101,7 @@ module.exports = do ->
         title: "#{course.title}"
         description: page.description
         keywords: page.keywords
+        location: "http://webdevpro.codyseibert.com/courses/#{course.shortName}/#{page.title}"
         page: page
         course: course
 

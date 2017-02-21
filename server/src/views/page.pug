@@ -4,6 +4,13 @@ html
     title= title
     meta(name="description" content= description || "a basic web development tutorial using HTML, JS, and CSS")
     meta(name="keywords" content= keywords || "")
+
+    meta(property="og:url"          content= location)
+    meta(property="og:type"         content="website")
+    meta(property="og:title"        content= title)
+    meta(property="og:description"  content= description)
+    //- meta(property="og:image"        content="http://www.your-domain.com/path/image.jpg")
+
     link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css")
     link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/hybrid.min.css")
     link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
@@ -171,7 +178,7 @@ html
             .social
               div(
                 class="fb-like"
-                data-href="https://developers.facebook.com/docs/plugins/"
+                data-href= location
                 data-layout="standard"
                 data-action="like"
                 data-size="small"
