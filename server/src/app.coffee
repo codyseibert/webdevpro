@@ -100,6 +100,7 @@ module.exports = do ->
       res.render 'page',
         title: "#{course.title}"
         description: page.description
+        keywords: page.keywords
         page: page
         course: course
 
