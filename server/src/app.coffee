@@ -98,7 +98,7 @@ module.exports = do ->
       page = findByTitle course.modules, pageTitle
       page.markdown = marked page.markdown
       res.render 'page',
-        title: "WebDevPro - #{course.title}: #{page.title}"
+        title: "#{course.title}"
         description: page.description
         page: page
         course: course
