@@ -163,6 +163,9 @@ html
 
         .col-md-9
           .content
+            .social
+              div(class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true")
+                
             .markdown!= page.markdown
 
               .controls
@@ -176,3 +179,13 @@ html
                     a(href= page.next.link)
                       span= page.next.title
                       i.fa.fa-caret-right
+
+  #fb-root
+  script.
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1753555681628484";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
