@@ -2,7 +2,6 @@ express = require 'express'
 bodyParser = require 'body-parser'
 cors = require 'cors'
 log4js = require 'log4js'
-expressVue = require 'express-vue'
 path = require 'path'
 _ = require 'lodash'
 
